@@ -122,6 +122,7 @@ let drawWin = () =>{
     
 };
 let gameOver = () =>{
+    draw()
     drawOver();
     clearInterval(gameInterval);
 };
