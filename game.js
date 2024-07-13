@@ -100,6 +100,7 @@ let restartPacmanAndGhosts = () => {
     createGhosts();
     lives -- ;
     if (lives == 0) {
+        draw()
         gameOver();
     }
 };
@@ -110,15 +111,14 @@ let onGhostCollision = () => {
 let drawOver = () =>{
     canvasContext.font = "40px Emulogic";
     canvasContext.fillStyle ="white";
-    canvasContext.fillText("GAME OVER!",100,235);
+    canvasContext.fillText("GAME OVER!",87,235);
     update();
     
 };
 let drawWin = () =>{
     canvasContext.font = "40px Emulogic";
     canvasContext.fillStyle ="white";
-    canvasContext.fillText("GAME WIN!",100,235);
-    update();
+    canvasContext.fillText("GAME WIN!",87,235);
     
 };
 let gameOver = () =>{
@@ -136,6 +136,7 @@ let update = () => {
         onGhostCollision();
     }
     if(score >= 200){
+        draw()
         drawWin();
         clearInterval(gameInterval);
     };
